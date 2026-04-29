@@ -52,17 +52,16 @@ order by
 
 SELECT
   customer_id,
-  SUM(amount) AS faturamento_total,
-  AVG(amount) AS ticket_medio
+  SUM(invoice_id) AS faturamento_total,
+  AVG(invoice_id) AS ticket_medio
 FROM
-  payment
+  invoice
 GROUP BY
   customer_id
 HAVING
-  AVG(amount) > 5
+  AVG(invoice_id) > 5
 ORDER BY
   faturamento_total DESC;
-
 
 
 
