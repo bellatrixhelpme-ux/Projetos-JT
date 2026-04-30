@@ -64,8 +64,11 @@ ORDER BY
   faturamento_total DESC;
 
 
-
-
+select c."FistName", c."LastName",
+from "Costumer" c
+left join "Invoice" i 
+on c."CustomerId" = i."CustomerId"
+where i."invoiceId" is null;
 
 
 
